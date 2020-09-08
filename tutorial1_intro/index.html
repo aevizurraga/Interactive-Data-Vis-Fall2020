@@ -1,11 +1,52 @@
 <!DOCTYPE html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#search").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#d3-table tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
   <head>
     <meta charset="utf-8">
-    <title>Interactive Data Visualization Tutorial</title>
+    <title>Interactive Data Visualization Tutorial - Angel Vizurraga</title>
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
-    Welcome to Interactive Data Visualization Tutorials
+    <br>
+    <audio controls loop> 
+    <source src="/data/The_Strokes_NYCC.mp3">  
+    </audio>
+    <B>The Strokes - New York City Cops</B>
+    <br>
+    <br>
+    <B style="font-size: 20px"> <center> New York City Police Department Settlements 2016 - 2018 </center> </B>
+    <br>
+    <br>
+    <br> 
+    <input type="text" id="search" placeholder= "Filter by Borough...">
+    <table class = "sortable", style="float: left", id = "d3-table"></table>
+    <table style="float: left">
+      <tr>
+        <th style="font-size: 17px"; colspan="4"<b><center>Total Amount in Dollars per Year | 2016 - 2018</center></b></th>
+      </tr> 
+      <tr>
+        <th>2016</th>
+        <th>2017</th>
+        <th>2018</th>
+        <th>Total</th>
+      </tr>
+      <tr>
+        <td>$ 272,430,847.00</td>
+        <td>$ 308,244,541.00</td>
+        <td>$ 229,750,520.00</td>
+        <td>$ 810,425,908.00</td>
+      </tr>
+    </table>
     <script src="../lib/d3.js"></script>
     <script src="main.js"></script>
   </body>
