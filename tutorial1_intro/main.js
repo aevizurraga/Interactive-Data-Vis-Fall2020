@@ -1,12 +1,9 @@
-
-
-
 d3.csv("../../data/Police_Settlements_1.csv").then(data => {
     console.log("data", data);
 
-    const table = d3.select("#d3-table");
-  
+    const table = d3.select("#d3-table");  
     
+
     const thead = table.append("thead");
     
     thead
