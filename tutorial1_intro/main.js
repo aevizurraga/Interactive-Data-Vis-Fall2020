@@ -1,4 +1,4 @@
-d3.csv("../../data/policeSettlements.csv").then(data => {
+d3.csv("../../data/surveyResults.csv").then(data => {
     console.log("data", data);
 
     const table = d3.select("#d3-table");  
