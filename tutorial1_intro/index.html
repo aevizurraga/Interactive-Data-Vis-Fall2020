@@ -14,10 +14,11 @@ $(document).ready(function(){
 </script>
   <head>
     <meta charset="utf-8">
-    <title>Interactive Data Visualization Tutorial - Angel Vizurraga</title>
+    <title>Interactive Data Visualization Tutorial - Angel Vizurraga
+    </title>
     <link rel="stylesheet" href="./style.css">
   </head>
-  <body>
+  <body style="background-color:rgba(82, 104, 126, 0.623)">
     <br>
     <audio controls loop> 
     <source src="../data/The_Strokes_NYCC.mp3">  
@@ -25,13 +26,14 @@ $(document).ready(function(){
     <B>The Strokes - New York City Cops</B>
     <br>
     <br>
-    <B style="font-size: 20px"> <center> New York City Police Department Settlements 2016 - 2018 </center> </B>
+    <h1 style="font-size: 20px"><center> New York City Police Department Settlements 2016 - 2018 </center> </h1> 
+    <h3 style="font-size: 15px"><center>Data Source: NYC Open Data</center> </h3>
     <br>
     <br>
     <br> 
-    <input type="text" id="search" placeholder= "Filter by Borough...">
+    <input type="text" id="search" placeholder= "Filter by Borough..." style="background-color:rgba(114, 131, 148, 0.623)">
     <table class = "sortable", style="float: left", id = "d3-table"></table>
-    <table style="float: left">
+    <table style="float: right">
       <tr>
         <th style="font-size: 17px"; colspan="4"<b><center>Total Amount in Dollars per Year | 2016 - 2018</center></b></th>
       </tr> 
