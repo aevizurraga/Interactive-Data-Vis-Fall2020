@@ -10,7 +10,7 @@ d3.csv("../data/policeSettlements.csv").then(data => {
       .append("tr")
       .append("th")
       .attr("colspan", "6")
-      .text("Claims Records")
+      .text("Claims-Records")
       .style("font-size", "17px");
   
     thead
