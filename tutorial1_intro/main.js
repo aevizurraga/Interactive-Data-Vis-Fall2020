@@ -10,7 +10,7 @@ d3.csv("../data/policeSettlements.csv").then(data => {
       .append("tr")
       .append("th")
       .attr("colspan", "6")
-      .text("Claims Records (Items in pink are settlements above $20,000)")
+      .text("Claims Records (Items in pink are settlements above $ 20,000)")
       .style("font-size", "17px");
   
     thead
