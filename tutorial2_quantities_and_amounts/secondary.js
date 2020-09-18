@@ -2,7 +2,7 @@ d3.csv("../data/NYC_Settlements_Table.csv", d3.autoType).then(data => {
     console.log(data);
 
     data = data.sort(function (a, b) {
-    return d3.descending(a.Average, b.Average);
+        return d3.descending(a.SetPerThousandPeople, b.SetPerThousandPeople);
     })
   
     const 
@@ -12,7 +12,7 @@ d3.csv("../data/NYC_Settlements_Table.csv", d3.autoType).then(data => {
         paddingInner = 0.2;
 
     const svg = d3
-        .select("#d3-container")
+        .select("#d3-container-1")
         .append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
@@ -22,9 +22,8 @@ d3.csv("../data/NYC_Settlements_Table.csv", d3.autoType).then(data => {
   
      const xScale = d3
         .scaleLinear()
-        .domain([0, 90000])
-        .range([0, width])
-;
+        .domain([0, 10])
+        .range([0, width]);
 
         svg
         .append('g')
@@ -43,10 +42,11 @@ d3.csv("../data/NYC_Settlements_Table.csv", d3.autoType).then(data => {
 
         svg
         .append('g')
+        .attr("class", "axisWhite")
         .call(d3.axisLeft(yScale))
-        .selectAll('text')
+        .selectAll("text")
         .style("font-size", "21px")
-        .style("fill", "#DAE1E7");     
+        .style("fill", "#DAE1E7")     
 
     const rect = svg
         .selectAll("rect")
@@ -55,23 +55,11 @@ d3.csv("../data/NYC_Settlements_Table.csv", d3.autoType).then(data => {
         .append("rect")
         .attr("x", 40)
         .attr("y", d => yScale(d.Borough))
-        .attr("width", d => xScale(d.Average))
+        .attr("width", d => xScale(d.SetPerThousandPeople))
         .attr("height", yScale.bandwidth())
         .attr("fill", "#DAE1E7")
         .attr("stroke", "black");
 
-    const text = svg
-        .selectAll("text")
-        .data(data)
-        .enter()
-        .append("text")
-        .attr("class", "label")
-        .attr("y", d => yScale(d.Borough) + yScale.bandwidth())
-        .attr("x", d => xScale(d.Average) + 3)
-        .text(d => d.Average)
-        .attr("dy", ".35em");
-
 })
-////////////////////////////////////////////////////////////////////////////////////////////
-       
 
+///////////////////////////////////////////////////////////////////////////////////////////

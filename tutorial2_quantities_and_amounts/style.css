@@ -2,13 +2,24 @@ body {
     /* ref: https://fonts.google.com/specimen/Source+Sans+Pro?selection.family=Source+Sans+Pro */
     font-family: 'Source Sans Pro', sans-serif;
     padding: 1em 3em;
+    height: 100%;
+    background: #679B9B;
   }
-  
-  .label {
+   
+header h1, h2, h4, b {
+    color: #DAE1E7;
+}
+ 
+#d3-container{
+    display: block;
+    margin: auto;
+  }
+
+#d3-container-1{
+    display: block;
+    margin: auto;
+  }
+
+.axisWhite text {
     fill: white;
-    text-anchor: middle;
-  }
-  
-  .axis {
-    font-size: 16px;
   }
