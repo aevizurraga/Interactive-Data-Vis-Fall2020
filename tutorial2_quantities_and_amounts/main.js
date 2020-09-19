@@ -45,7 +45,9 @@ d3.csv("../data/NYC_Settlements_Table.csv", d3.autoType).then(data => {
         .append('g')
         .call(d3.axisLeft(yScale))
         .selectAll('text')
-        .style("font-size", "21px")
+        .attr("transform", "translate(-2)")
+        .style("text-anchor", "end")
+        .style("font-size", "20px")
         .style("fill", "#DAE1E7");     
 
     const rect = svg
@@ -53,25 +55,21 @@ d3.csv("../data/NYC_Settlements_Table.csv", d3.autoType).then(data => {
         .data(data)
         .enter()
         .append("rect")
-        .attr("x", 40)
         .attr("y", d => yScale(d.Borough))
         .attr("width", d => xScale(d.Average))
         .attr("height", yScale.bandwidth())
         .attr("fill", "#DAE1E7")
-        .attr("stroke", "black");
-
-    const text = svg
-        .selectAll("text")
-        .data(data)
-        .enter()
-        .append("text")
-        .attr("class", "label")
-        .attr("y", d => yScale(d.Borough) + yScale.bandwidth())
-        .attr("x", d => xScale(d.Average) + 3)
-        .text(d => d.Average)
-        .attr("dy", ".35em");
-
+        .attr("stroke", "black");    
 })
 ////////////////////////////////////////////////////////////////////////////////////////////
        
 
+//const text = svg
+  //      .select("text")
+    //    .data(data)
+      //  .join("text")
+        //.attr("class", "label")
+  //      .attr("x", 0, d => yScale(d.Average))
+    //    .attr("y", d => yScale(d.Borough) + (yScale.bandwidth()))
+      //  .text(d => d.Average)
+  //      .attr("dx", "");

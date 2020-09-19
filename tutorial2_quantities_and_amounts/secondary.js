@@ -23,7 +23,8 @@ d3.csv("../data/NYC_Settlements_Table.csv", d3.autoType).then(data => {
      const xScale = d3
         .scaleLinear()
         .domain([0, 10])
-        .range([0, width]);
+        .range([0, width])
+;
 
         svg
         .append('g')
@@ -42,18 +43,18 @@ d3.csv("../data/NYC_Settlements_Table.csv", d3.autoType).then(data => {
 
         svg
         .append('g')
-        .attr("class", "axisWhite")
         .call(d3.axisLeft(yScale))
         .selectAll("text")
-        .style("font-size", "21px")
-        .style("fill", "#DAE1E7")     
+        .attr("transform", "translate(-2)")
+        .style("text-anchor", "end")
+        .style("font-size", "20px")
+        .style("fill", "#DAE1E7");     
 
     const rect = svg
         .selectAll("rect")
         .data(data)
         .enter()
         .append("rect")
-        .attr("x", 40)
         .attr("y", d => yScale(d.Borough))
         .attr("width", d => xScale(d.SetPerThousandPeople))
         .attr("height", yScale.bandwidth())

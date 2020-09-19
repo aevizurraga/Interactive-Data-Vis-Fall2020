@@ -3,7 +3,7 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
     padding: 1em 3em;
     height: 100%;
-    background: #679B9B;
+    background-image: linear-gradient(to right, rgba(103,155,155,1), rgba(103,155,155,.65));
   }
    
 header h1, h2, h4, b {
@@ -20,6 +20,3 @@ header h1, h2, h4, b {
     margin: auto;
   }
 
-.axisWhite text {
-    fill: white;
-  }
