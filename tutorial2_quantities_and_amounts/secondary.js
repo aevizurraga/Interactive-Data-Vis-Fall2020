@@ -23,7 +23,7 @@ d3.csv("../data/NYC_Settlements_Table.csv", d3.autoType).then(data => {
      const xScale = d3
         .scaleLinear()
         .domain([0, 10])
-        .range([0, width])
+        .range([0, (width - 50)])
 ;
 
         svg
