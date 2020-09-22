@@ -18,7 +18,11 @@ si_only <- all_police_set %>%
 #Summarize Data grouped by Boroughs
 allSummary <- all_police_set %>%
   group_by(Borough) %>%
-  summarize(Average = mean(Settlement.Amount), Std.Dev = sd(Settlement.Amount), Minimum = min(Settlement.Amount), Maximum = max(Settlement.Amount), Count = n(), Sum = sum(Settlement.Amount))
+  summarize(Average = mean(Settlement.Amount), 
+            Std.Dev = sd(Settlement.Amount), 
+            Minimum = min(Settlement.Amount), 
+            Maximum = max(Settlement.Amount), 
+            Count = n(), Sum = sum(Settlement.Amount))
 
 #Turn tribble to dataframe
 allSummary <- as.data.frame(allSummary) 
@@ -37,6 +41,11 @@ FiveBoroughsSummary$Population.2019.Estimate <- Population
 FiveBoroughsSummary$Avg.Set.Per.Year <- round((FiveBoroughsSummary$Count/3), 0)
 
 #Create avg number of settlements per 10,000 people in each borough
-FiveBoroughsSummary$Set.Per.10000.People <- round(((FiveBoroughsSummary$Avg.Set.Per.Year/FiveBoroughsSummary$Population.2019.Estimate) * 10000), 1)
+FiveBoroughsSummary$SetPerThousandPeople <- 
+  round(((FiveBoroughsSummary$Avg.Set.Per.Year/FiveBoroughsSummary$Population.2019.Estimate) * 10000), 0)
+
+#Round Variables
+FiveBoroughsSummary$Average <- 
+  round(FiveBoroughsSummary$Average, 0)
 
 write.csv(FiveBoroughsSummary, "NYC_Settlements_Table.csv", row.names = F)

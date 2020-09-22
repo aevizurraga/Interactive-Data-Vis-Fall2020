@@ -6,9 +6,9 @@ d3.csv("../data/NYC_Settlements_Table.csv", d3.autoType).then(data => {
     })
   
     const 
-        margin = { top: 20, bottom: 140, left: 250, right: 90 }
-        width = 1500 - margin.left - margin.right,
-        height = 1500 - margin.top - margin.bottom,
+        margin = { top: 30, bottom: 250, left: 250, right: 20 }
+        width = width = window.innerWidth * 0.6,
+        height = window.innerHeight / 2,
         paddingInner = 0.2;
 
     const svg = d3
@@ -23,7 +23,7 @@ d3.csv("../data/NYC_Settlements_Table.csv", d3.autoType).then(data => {
      const xScale = d3
         .scaleLinear()
         .domain([0, 90000])
-        .range([0, (width - 50)])
+        .range([0, width])
 ;
 
         svg

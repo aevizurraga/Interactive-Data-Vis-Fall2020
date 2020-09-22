@@ -1,74 +1,145 @@
-/* CONSTANTS AND GLOBALS */
-const width = window.innerWidth * 0.7,
-  height = window.innerHeight * 0.7,
-  margin = { top: 20, bottom: 50, left: 60, right: 40 },
-  radius = 5;
+const width = window.innerWidth * 0.6,
+  height = window.innerHeight * 0.59,
+  margin = { top: 50, bottom: 80, left: 80, right: 40 },
+  radius = 6;
 
-// these variables allow us to access anything we manipulate in init() but need access to in draw().
-// All these variables are empty before we assign something to them.
-let svg;
-let xScale;
-let yScale;
+var div = d3.select("#d3-container")
+            .append("div")
+            .attr("class", "tooltip")
+  
+//let svg;
+//let xScale;
+//let yScale;
 
-/* APPLICATION STATE */
-let state = {
+let baseball = {
   data: [],
-  selection: "All" // + YOUR FILTER SELECTION
+  selectedEvent: "All",
 };
 
-/* LOAD DATA */
-d3.json("../data/environmentRatings.json", d3.autoType).then(raw_data => {
-  // + SET YOUR DATA PATH
+d3.csv("../../data/baseball_sample.csv", d3.autoType).then(raw_data => {
   console.log("raw_data", raw_data);
-  state.data = raw_data;
+  baseball.data = raw_data;
   init();
 });
 
-/* INITIALIZING FUNCTION */
-// this will be run *one time* when the data finishes loading in 
 function init() {
-  // + SCALES
+  xScale = d3
+    .scaleLinear()
+    .domain([0, 120])
+    .range([margin.left, width - margin.right]);
 
-  // + AXES
+  yScale = d3
+    .scaleLinear()
+    .domain([-80, 100])
+    .range([height - margin.bottom, margin.top]);
 
-  // + UI ELEMENT SETUP
+  const xAxis = d3.axisBottom(xScale);
+  const yAxis = d3.axisLeft(yScale);
 
   const selectElement = d3.select("#dropdown").on("change", function() {
-    // `this` === the selectElement
-    // 'this.value' holds the dropdown value a user just selected
-
-    state.selection = this.value
-    console.log("new value is", this.value);
-    draw(); // re-draw the graph based on this new selection
+    console.log("new selected event is", this.value);
+    baseball.selectedEvent = this.value;
+    draw();
   });
 
-  // add in dropdown options from the unique values in the data
   selectElement
     .selectAll("option")
-    .data(["All", "1", "2", "3"]) // + ADD UNIQUE VALUES
+    .data(["All", "Home Run", "Out", "Hit - Not Home Run"]) 
     .join("option")
     .attr("value", d => d)
     .text(d => d);
 
-  // + CREATE SVG ELEMENT
+  svg = d3
+    .select("#d3-container")
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height);
 
-  // + CALL AXES
+  svg
+    .append("g")
+    .attr("transform", `translate(0,${height - margin.bottom})`)
+    .attr("color", "white")
+    .style("font-size", "14")
+    .call(xAxis)
+    .append("text")
+    .attr("class", "axis-label")
+    .attr("x", "50%")
+    .attr("y", (margin.bottom / 2) + 20)
+    .text("Launch Speed (mph)");
 
-  draw(); // calls the draw function
+  svg
+    .append("g")
+    .attr("transform", `translate(${margin.left},0)`)
+    .attr("color", "white")
+    .style("font-size", "14")
+    .call(yAxis)
+    .append("text")
+    .attr("class", "axis-label")
+    .attr("y", "50%")
+    .attr("x", (-margin.left / 2) - 10)
+    .attr("writing-mode", "vertical-rl")
+    .text("Launch Angle");
+
+  draw(); 
 }
 
-/* DRAW FUNCTION */
- // we call this everytime there is an update to the data/state
 function draw() {
-  
-  // + FILTER DATA BASED ON STATE
+ 
+  let filteredData = baseball.data;
+  if (baseball.selectedEvent !== "All") {
+    filteredData = baseball.data.filter(d => d.event === baseball.selectedEvent);
+  }
 
-  // const dot = svg
-  //   .selectAll("circle")
-  //   .data(filteredData, d => d.name)
-  //   .join(
-  //     enter => enter, // + HANDLE ENTER SELECTION
-  //     update => update, // + HANDLE UPDATE SELECTION
-  //     exit => exit // + HANDLE EXIT SELECTION
-  //   );
+  const dot = svg
+    .selectAll(".dot")
+    .data(filteredData, d => d.event) 
+    .join(
+      enter =>
+        enter
+          .append("circle")
+          .attr("class", "dot") 
+          .attr("stroke", "black")
+          .attr("fill", d => {
+            if (d.event === "Home Run") return "darkblue";
+            else if (d.event === "Out") return "darkorange";
+            else return "white";
+          })
+          .attr("r", radius)
+          .attr("cx", d => xScale(d.launch_speed))
+          .attr("cy", d => margin.top)
+          //.on("mouseover", function(d) {
+            //div.transition()		
+                //.duration(200)		
+                //.style("opacity", .9)
+                //.text("something")
+                //.style("left", (d3.event.pageX) + "px")		
+                //.style("top", (d3.event.pageY - 28) + "px");
+            //})
+          .call(enter =>
+            enter
+              .transition()            
+              .ease(d3.easeBackIn)
+              .duration(1500) 
+              .attr("cy", d => yScale(d.launch_angle))
+          ),
+      update =>
+        update.call(update =>
+          update
+            .transition()
+            .duration(5000)
+            .attr("stroke", "black")
+            .transition()
+            .duration(5000)
+            .attr("stroke", "white")
+        ),
+      exit =>
+        exit.call(exit =>
+          exit
+            .transition()
+            .duration(1500)
+            .ease(d3.easeCircleOut)
+            .attr("cx", margin.left)
+            .remove()
+        )
+    );
 }

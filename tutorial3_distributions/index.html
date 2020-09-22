@@ -5,9 +5,23 @@
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
-    <label for="dropdown">Filter Selection</label>
-    <select id="dropdown" name="dropdown"></select>
-    <div id="d3-container"> </div>
+    <header>
+      <h1 style="text-align: center; color: white; font-size: 60px;">Play Ball!</h1>
+      <h1 style="color: white; text-align: center;">Outcomes of Baseballs Put in Play Based on Launch Angle and Launch Speed</h1> 
+    </header>
+    <label for="dropdown" style="font-size: 30px; text-align: center;">Select At-Bat Outcome</label>
+    <br>
+    <select id="dropdown" name="dropdown" style="font-size: 20px;"></select>
+    <br>
+    <div id="d3-container" style="text-align: center;">
+    </div>
+    <br>
+    <audio class="Player" controls loop> 
+      <source src="../data/Wild-Thing.mp3" >  
+  </audio>
+  <br>
+  <img src="../../data/ricky-vaughn.png" class="center"> 
+    
     <script src="../lib/d3.js"></script>
     <script src="main.js"></script>
   </body>
