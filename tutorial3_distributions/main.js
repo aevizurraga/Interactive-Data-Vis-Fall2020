@@ -1,7 +1,7 @@
 const width = window.innerWidth * 0.5,
   height = window.innerHeight * 0.5,
   margin = { top: 50, bottom: 80, left: 80, right: 40 },
-  radius = 6;
+  radius = 5.5;
 
 var div = d3.select("#d3-container")
             .append("div")
