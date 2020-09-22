@@ -103,7 +103,7 @@ function draw() {
           .attr("stroke", "black")
           .attr("fill", d => {
             if (d.event === "Home Run") return "darkblue";
-            else if (d.event === "Out") return "darkorange";
+            else if (d.event === "Out") return "#ff3333";
             else return "white";
           })
           .attr("r", radius)
@@ -140,7 +140,7 @@ function draw() {
             .transition()
             .duration(1500)
             .ease(d3.easeCircleOut)
-            .attr("cy", d => yScale(0))
+            .attr("cy", height - margin.bottom)
             .remove()
         )
     );
