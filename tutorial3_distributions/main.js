@@ -53,7 +53,9 @@ function init() {
     .select("#d3-container")
     .append("svg")
     .attr("width", width)
-    .attr("height", height);
+    .attr("height", height)
+    .attr("rx", "20")
+    .attr("ry", "20");
 
   svg
     .append("g")
@@ -77,7 +79,7 @@ function init() {
     .attr("class", "axis-label")
     .attr("y", "50%")
     .attr("x", (-margin.left / 2) - 10)
-    .attr("writing-mode", "vertical-rl")
+    .attr("writing-mode", "vertical-lr")
     .text("Launch Angle");
 
   draw(); 
@@ -106,7 +108,7 @@ function draw() {
           })
           .attr("r", radius)
           .attr("cx", d => xScale(d.launch_speed))
-          .attr("cy", d => margin.top)
+          .attr("cy", d => margin.bottom)
           //.on("mouseover", function(d) {
             //div.transition()		
                 //.duration(200)		
@@ -138,7 +140,7 @@ function draw() {
             .transition()
             .duration(1500)
             .ease(d3.easeCircleOut)
-            .attr("cx", margin.left)
+            .attr("cy", d => yScale(0))
             .remove()
         )
     );
