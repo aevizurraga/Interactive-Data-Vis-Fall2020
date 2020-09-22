@@ -16,7 +16,7 @@ let baseball = {
   selectedEvent: "All",
 };
 
-d3.csv("baseball_sample.csv", d3.autoType).then(raw_data => {
+d3.csv("../data/baseball_sample.csv", d3.autoType).then(raw_data => {
   console.log("raw_data", raw_data);
   baseball.data = raw_data;
   init();
