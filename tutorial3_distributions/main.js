@@ -53,9 +53,7 @@ function init() {
     .select("#d3-container")
     .append("svg")
     .attr("width", width)
-    .attr("height", height)
-    .attr("rx", "20")
-    .attr("ry", "20");
+    .attr("height", height);
 
   svg
     .append("g")

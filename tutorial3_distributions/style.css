@@ -1,5 +1,5 @@
 body {
-    background-color: #339933;
+    background-color: #2c8a2c;
 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250' viewBox='0 0 20 20'%3E%3Cg %3E%3Cpolygon fill='%234d994d' points='20 10 10 0 0 0 20 20'/%3E%3Cpolygon fill='%234d994d' points='0 10 0 20 10 20'/%3E%3C/g%3E%3C/svg%3E");
 }
 
@@ -11,20 +11,24 @@ svg {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 120 120'%3E%3Cpolygon fill='%23000' fill-opacity='0.02' points='120 0 120 60 90 30 60 0 0 0 0 0 60 60 0 120 60 120 90 90 120 60 120 0'/%3E%3C/svg%3E");
 }
 
-label {
-    color: white;
-}
-
 .center {
-    width: 17%;
+    width: 18%;
     display: block;
     margin-left: auto;
     margin-right: auto;  
+    border-radius: 45px;
+    border-style: solid;
+    border-color: white;
 }
 
 .Player {
     display: block;
     margin: 0 auto;
+    border-style: solid;
+    border-radius: 12px;
+    border-color: white;
+    height: 5px;
+    width: 5px;
 }
 
 select {
@@ -35,6 +39,7 @@ select {
 
 label {
     display: block;
+    color: white;
     margin-left: auto;
     margin-right: auto; 
 }
@@ -51,4 +56,13 @@ label {
     left: 10;
     color: white;
     font-size: 15px;
+}
+
+.audioText {
+    display: block;
+    margin: 0 auto;
+}
+
+b {
+   color: white; 
 }
