@@ -107,14 +107,6 @@ function draw() {
           .attr("r", radius)
           .attr("cx", d => xScale(d.launch_speed))
           .attr("cy", d => margin.bottom)
-          //.on("mouseover", function(d) {
-            //div.transition()		
-                //.duration(200)		
-                //.style("opacity", .9)
-                //.text("something")
-                //.style("left", (d3.event.pageX) + "px")		
-                //.style("top", (d3.event.pageY - 28) + "px");
-            //})
           .call(enter =>
             enter
               .transition()            
@@ -125,12 +117,12 @@ function draw() {
       update =>
         update.call(update =>
           update
-            .transition()
-            .duration(5000)
-            .attr("stroke", "black")
-            .transition()
-            .duration(5000)
-            .attr("stroke", "white")
+            //.transition()
+            //.duration(500)
+            //.attr("stroke", "black")
+            //.transition()
+            //.duration(500)
+            //.attr("stroke", "white")
         ),
       exit =>
         exit.call(exit =>

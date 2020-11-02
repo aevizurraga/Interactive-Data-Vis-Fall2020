@@ -1,0 +1,61 @@
+body {
+    /* ref: https://fonts.google.com/specimen/Source+Sans+Pro?selection.family=Source+Sans+Pro */
+    font-family: monaco,Consolas,Lucida Console,monospace;
+    padding: 1em 3em;
+    background-color: #dfd9d9;
+}
+  
+svg {
+  background-color: #dfd9d9;
+  border-style: solid;
+  border-color: white;
+  border-radius: 50px;
+}
+
+.dot {
+  cursor: cell;
+  fill: #D50032;;
+  opacity: 1;
+}
+
+label {
+  display: block;
+  color: #D50032;    
+  margin-left: auto;
+  margin-right: auto; 
+  font : 25px monaco;
+  font-weight: bold;
+}
+
+select {
+  display: block;
+  color: #002D72;
+  margin-left: auto;
+  margin-right: auto;  
+}
+  
+.axis-label {
+  font-size: 25px;
+  fill: #002D72;
+  text-anchor: middle;
+}
+  
+.trend {
+  fill: #002D72;
+}
+
+.tooltip{
+  position      : absolute;
+  text-align    : center;
+  max-width     : 100px;
+  max-height    : 250px;
+  padding       : 8px;
+  border        : solid;
+  border-radius : 8px;
+  margin-top    : 30px;
+  font          : 20px monaco;
+  background    : white;
+  color         : black;
+  pointer-events: none;
+  opacity: 0
+}

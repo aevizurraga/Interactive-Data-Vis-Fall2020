@@ -1,14 +1,29 @@
 <!DOCTYPE html>
   <head>
     <meta charset="utf-8">
-    <title>Interactive Data Visualization Tutorial</title>
     <link rel="stylesheet" href="./style.css">
+    
+    <title>Interactive Data Visualization Tutorial - Angel Vizurraga</title>
   </head>
+  
   <body>
-    Welcome to Interactive Data Visualization Tutorials
-    <label for="dropdown">Filter Selection</label>
-    <select id="dropdown" name="dropdown"></select>
+    <header>
+      <h1 style="text-align: center; color: #002D72; font-size: 40px;">MAJOR LEAGUE BASEBALL HOME RUN LEADERS</h1>
+      <h1 style="text-align: center; color: #D50032; font-size: 30px;">AMERICAN LEAGUE | NATIONAL LEAGUE</h1>
+    </header>
+
+    <label for="dropdown" style="text-align: center;">Select a League</label>
+    <br>
+    <select id="dropdown" name="dropdown" style="font-size:large;"></select>
+    <br>
+
+    <!-- all we need is an element to select -->
+    <div id="d3-container" style="text-align: center;"> </div>
+
+    <!-- this is the line that loads in d3 -->
     <script src="../lib/d3.js"></script>
-    <script src="main.js"></script>
+    <!-- this is the line that loads in the main js script -->
+    <script src="./main.js"></script>
   </body>
+
 </html>
