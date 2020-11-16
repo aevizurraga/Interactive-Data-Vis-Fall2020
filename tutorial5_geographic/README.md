@@ -1,11 +1,10 @@
-# Tutorial 5
+# Tutorial 6
 
 The goals for this tutorial are:
 
-- To explore GeoJSON data, and how geographical features on our earth translate to projected shapes on an svg.
-- To understand [projections](https://github.com/d3/d3-geo#projections), in conjunction with [d3.geo-path](https://github.com/d3/d3-geo#geoPath), transforms lattitude and longitude space into pixel space.
-- To grasp that d3.js svg maps are as simple as lines and circles, and can be manipulated as such, with stroke, fill, etc.
-- To be exposed to the concept of something updating with every mouse movement -- the early stages of what will later become a tooltip.
+- To introduce [hierarchical](https://github.com/d3/d3-hierarchy) and nested data.
+- To start exploring how d3-layout algorithms can help create complex views.
+- To show how seemingly different views are in their nature structured very similarly (circle pack, icicle, treemap, dendrograms)
 
 ## Setup + Serve:
 
@@ -14,13 +13,13 @@ You should already have a local copy of your repository from the [tutorial 0](..
 Once your local serve is up and reacting to code changes, you're ready to begin working on your tutorial assignment.
 As you're building, don't forget you can always reference the [class code branch](https://github.com/InteractiveDataVis/Interactive-Data-Vis-Fall2020/tree/class/) or the [demo code branch](https://github.com/InteractiveDataVis/Interactive-Data-Vis-Fall2020/tree/demo/) for additional context. 
 
-## Week 5 Assignment:
+## Week 6 Assignment:
 
-- [ ] Implement your own version of the map, using the us state geojson data provided in the [data folder](../data/), or another geojson of your choice.
+- [ ] Implement your own version of the treemap we made in class using the [`flare.json`](../data/flare.json) dataset provided (or if you are up for the challenge create your own dataset).
 
-- [ ] Using your own lat/long dataset _OR_ the provided dataset for this exercise, [`usHeatExtremes.csv`](../data/usHeatExtremes.csv) (also in the [data folder](../data/)), add points to your map. _HINT:_ since we're still in svg, we can just add circles to the map, like we've done before, but you'll need to use your `projection` to translate from (long,lat) values to (x,y) values.
+- [ ] Turn this treemap into a [circle pack](https://github.com/d3/d3-hierarchy#pack) layout instead of the treemap (this will take using a different layout function, and mapping different graphical elements to data).
 
-- [ ] Add mouseover behavior to each point, so its data updates state, and is displayed in our tooltip display.
+- [ ] Add mouseover behavior to each point, so its data updates state, and is displayed in our tooltip display. Move the tooltip to it's new position.
 
 - [ ] Make intentional design decisions -- colors, sizes, axes, transitions, etc. should illustrate something interesting about or relevant to your data.
 
@@ -28,9 +27,7 @@ As you're building, don't forget you can always reference the [class code branch
 
 **BONUS:**
 
-- [ ] Add another data element to your map, such as using color or radius to represent a value, [like this](https://observablehq.com/@d3/bubble-map) or [this](https://observablehq.com/@d3/non-contiguous-cartogram?collection=@d3/d3-geo).
-
-- [ ] Implement transitions on your points, so the map begins blank, then they appear in a thoughtful way.
+- [ ] Do all of this for your own data. This may require data transformations. Take note of how the [`flare.json`](../data/flare.json) data is structured. 
 
 ## Deploy + Submit
 
@@ -41,12 +38,15 @@ Once you've completed the assignment, use the Github workflow to deploy your wor
 To receive full credit, you must post your stable path before the start of the next class. All tutorials are due on 10/28. 
 
 ## Required Reading: 
-- [ ] [Javascript.info: Objects](https://javascript.info/object)
-- [ ] [Javascript.info: Promises.](https://javascript.info/promise-basics)
-- [ ] Interpretations of Hurricane Forecast Uncertainty
-- [ ] OPTIONAL: [Grid Garden.](https://cssgridgarden.com/)
+- [ ] Tufte, The Visual Display of Quantitative Information: Data-Ink and Graphical Redesign.
+- [ ] Tufte, The Visual Display of Quantitative Information: Aesthetic and Technique in Data Graphical Design. 
 
 ## Other Resources:
+- [d3 hierarchy](https://github.com/d3/d3-hierarchy)
+- [d3 array](https://github.com/d3/d3-array#rollup)
+- [Javascript.info: Objects](https://javascript.info/object)
+- [Javascript.info: Promises.](https://javascript.info/promise-basics)
+- [Grid Garden.](https://cssgridgarden.com/)
 - [How Selections Work](https://bost.ocks.org/mike/selection/).
 - [Interneting Is Hard: Flexbox](https://www.internetingishard.com/html-and-css/flexbox/)
 - [Closure](https://javascript.info/closure)
@@ -73,4 +73,3 @@ To receive full credit, you must post your stable path before the start of the n
 - [Javascript.info: Getting Started](https://javascript.info/getting-started)
 - [Javascript.info: Debugging Chrome](https://javascript.info/debugging-chrome)
 - [D3: Data-Driven Documents](http://vis.stanford.edu/files/2011-D3-InfoVis.pdf)
-

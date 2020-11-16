@@ -1,0 +1,128 @@
+body {
+    padding: 1em 3em;
+    height: 150%;
+    background: url(background-nyc.png) no-repeat ;
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover cover;
+}
+   
+h1{
+    color: rgb(212, 204, 204);
+    font-size: 20px;
+    font-size: 1.7vw;
+    font-family: 'Anton', sans-serif;
+    fill: rgb(212, 204, 204);
+}
+ 
+.Button1 {
+    background-color: whitesmoke;
+    margin-right: 16%;
+    margin-left: auto;
+    float:right;
+    font-size: .7vw;
+    text-align: center;
+}
+
+svg {
+    background-color: #3d3d3b;
+    opacity: .85;
+    border-style: solid;
+    border-color: white;
+    border-radius: 50px;
+}
+
+#d3-container-2{
+    
+    float: right;
+}
+
+#d3-container-3{
+    
+    float:left;
+}
+
+.xaxis, .yaxis {
+    color: white;
+}
+
+.tooltip1{
+    position      : absolute;
+    text-align    : center;
+    max-width     : 400px;
+    max-height    : 400px;
+    padding       : 8px;
+    border        : solid;
+    border-radius : 8px;
+    margin-top    : 10px;
+    font          : 20px monaco;
+    background    : white;
+    color         : black;
+    pointer-events: none;
+    font-family: 'Anton', sans-serif;
+    opacity: 0
+}
+
+.axis-label {
+    font-size: 25px;
+    fill: white;
+    text-anchor: middle;
+    font-family: 'Anton', sans-serif;
+}
+
+.popup {
+  position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-size: 1vw;
+    color: rgb(212, 204, 204);
+    text-align: left;
+    font-family: 'Anton', sans-serif;
+}
+
+.popup .popuptext {
+    visibility: hidden;
+    width: 950px;
+    background-color: #555;
+    color: rgb(212, 204, 204);
+    text-align: center;
+    border-radius: 6px;
+    border-style: solid;
+    border-color: rgb(212, 204, 204);
+    padding: 20px 20px;
+    position: absolute;
+    top: auto;
+    left: 10%;
+    z-index: 1;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px;
+    font-size: 1vw;
+  }
+
+
+
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+  }
+  
+  /* Add animation (fade in the popup) */
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
+
+  .tick {
+    color: white
+  }
