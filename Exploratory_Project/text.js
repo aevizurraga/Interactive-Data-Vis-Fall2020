@@ -44,7 +44,7 @@ update = (selectedVar) => {
 
     yAxis1
     .transition()
-    .duration(500)
+    .duration(1000)
     .call(d3.axisLeft(y));
 
     svg1
@@ -64,30 +64,13 @@ update = (selectedVar) => {
     u.enter()
       .append("rect")
       .merge(u)
+      .transition()
+      .duration(1000)
         .attr("x", function(d) { return x(d.Borough); })
         .attr("y", function(d) { return y(d[selectedVar]); })
         .attr("width", x.bandwidth())
         .attr("height", function(d) { return height - margin.top - margin.top - y(d[selectedVar]); })
         .attr("fill", "rgb(212, 204, 204)")
-        .on("mouseover", function (d) {
-          tool
-            .transition()
-            .duration(100)
-            .style("opacity", .8)
-          tool
-            .html("There were " + x(d.Borough))
-            .style("left", d3.select(this).attr("cx") + "px")
-            .style("top", d3.select(this).attr("cy") + "px")  
-      })
-        .on("mouseout", function (d) {
-          tool
-            .transition()
-            .duration(100)
-            .style("opacity", 0)
-      })
-      
-          u
-          .transition();
   })
 }
 
