@@ -17,12 +17,19 @@ h1{
 }
  
 .Button1 {
-    background-color: whitesmoke;
+    background-color: rgb(212, 204, 204);
     margin-right: 16%;
     margin-left: auto;
     float:right;
     font-size: .7vw;
-    text-align: center;
+}
+
+.Button2 {
+    background-color: rgb(212, 204, 204);
+    margin-left: 16%;
+    margin-right: auto;
+    font-size: .7vw;
+    
 }
 
 svg {
@@ -73,12 +80,12 @@ svg {
 
 .popup {
   position: relative;
-    cursor: pointer;
+    cursor: help;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    font-size: 1vw;
+    font-size: .9vw;
     color: rgb(212, 204, 204);
     text-align: left;
     font-family: 'Anton', sans-serif;
@@ -86,22 +93,22 @@ svg {
 
 .popup .popuptext {
     visibility: hidden;
-    width: 950px;
+    width: 100vh;
+    max-height: auto;
     background-color: #555;
     color: rgb(212, 204, 204);
     text-align: center;
-    border-radius: 6px;
+    border-radius: .5em;
     border-style: solid;
     border-color: rgb(212, 204, 204);
-    padding: 20px 20px;
     position: absolute;
     top: auto;
     left: 10%;
     z-index: 1;
     margin-left: auto;
     margin-right: auto;
-    font-size: 25px;
     font-size: 1vw;
+    font-family: 'Anton', sans-serif;
   }
 
 

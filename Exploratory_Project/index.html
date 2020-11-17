@@ -12,9 +12,10 @@
           <br>2013-2017</h1>
     </div>
     <div class="popup" onclick="myFunction()">Click Here for Info
-      <span class="popuptext" id="myPopup" width=45%>Violent felonies include Arson, Burglary, Dangerous Weapons, Felony Assault, Grand Larceny, Rape, Robbery, and Sex Crimes.<br>
-      Population estimates are from the year 2019.<br>
-      Data: NYC Open Data Arrest Records 2013 - 2017
+      <span class="popuptext" id="myPopup" ><h3> Felonies include Arson, Burglary, Dangerous Weapons, Felony Assault, 
+        Grand Larceny, Rape, Robbery, Sex Crimes, and Murder | Non-Negligent Manslaughter.<br></h1>
+      <h3>Population estimates are from the year 2019.</h4>
+      <h6>Data:NYC Open Data Arrest Records 2013 - 2017</h6>
     </span>
     <script>
       function myFunction() {
@@ -26,18 +27,11 @@
     
     <br>
     <div> 
-      <div width = 50%>
+      <div >
         <select id = "selectButton" class="Button1"></select>
       </div>
-      <div style="margin-left: 48;">
-        <button style="font-size: .7vw;background-color: rgb(212, 204, 204);" onclick="update('Arson')">Arson</button>
-        <button style="font-size: .7vw;background-color: rgb(212, 204, 204)" onclick="update('Burglary')">Burglary</button>
-        <button style="font-size: .7vw;background-color: rgb(212, 204, 204)" onclick="update('DangerousWeapons')">Dangerous Weapons</button>
-        <button style="font-size: .7vw;background-color: rgb(212, 204, 204)" onclick="update('FelonyAssault')">Felony Assault</button>
-        <button style="font-size: .7vw;background-color: rgb(212, 204, 204)" onclick="update('GrandLarceny')">Grand Larceny</button>
-        <button style="font-size: .7vw;background-color: rgb(212, 204, 204)" onclick="update('Rape')">Rape</button>
-        <button style="font-size: .7vw;background-color: rgb(212, 204, 204)" onclick="update('Robbery')">Robbery</button>
-        <button style="font-size: .7vw;background-color: rgb(212, 204, 204)" onclick="update('SexCrimes')">Sex Crimes</button>
+      <div >
+        <select id = "selectButton1" class="Button2"></select>
       </div>
       </div>
     </div>
@@ -51,9 +45,8 @@
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://d3js.org/d3.v6.min.js"></script>
-    <script src="main.js"></script>
-    <script src="second.js"></script>
-    <script src="text.js"></script>
+    <script src="line_chart.js"></script>
+    <script src="bar_chart.js"></script>
     
   </body>
 </html>
