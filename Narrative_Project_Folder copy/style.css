@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(91, 159, 214);
+    color: whitesmoke;
+    line-height: 1.6;
+    height: 100vh;
+    overflow: hidden;
+
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    /*CSS SCROLL*/
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+
+}
+
+.navbar {
+    position: fixed;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    width: 100%;
+    height: 5vh;
+    background: rgba(56, 57, 58, 0.8);
+    ;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin: 0 2rem;
+    padding: .5rem;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.navbar ul li:hover {
+    background: rgb(61, 59, 59);
+    border-radius: .7rem;
+    color: black;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    justify-items: center;
+}
+
+
+section {
+    width: 100%;
+    height: 100vh;
+    scroll-snap-align: center;
+}
+
+section h3 {
+    font-size: 2rem;
+    font-family: 'Oswald', sans-serif;
+    color: rgb(46, 45, 45);
+}
+
+section p {
+    font-size: 1.7em;
+    justify-content: center;
+    text-align: justify;
+    font-family: 'Oswald', sans-serif;
+    color: whitesmoke;
+    
+}
+
+div p {
+    justify-content: center;
+    text-align: justify;
+}
+
+
+
+
