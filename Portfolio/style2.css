@@ -63,11 +63,11 @@ section {
     margin-top: 7vh;
 }
 
-section#Writing {
-    background: rgba(28, 82, 83, .8);
+section#Baseball {
+    background: rgb(76, 153, 76);
 }
 
-section#Threats {
+section#Crime {
     background: rgb(148, 148, 148);
 }
 
