@@ -74,7 +74,7 @@ update = (selectedVar) => {
       .style("fill", "whitesmoke")
       .style("font-size", ".9vw")
       .attr("writing-mode", "vertical-rl")
-      .text("Average # of Arrests per 100,000 people per year")
+      .text("Average Number of Arrests per year")
 
     var u = svg1
       .selectAll("rect")
