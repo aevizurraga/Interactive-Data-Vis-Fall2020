@@ -113,11 +113,11 @@ section#Title {
 
 .baseball-div {
         display: grid;
-        grid-template-columns: 50% 50%;
+        grid-template-columns: 10% 40% 40% 10%;
         grid-template-rows: 50% 50%;
         grid-template-areas: 
-            " homeruns-info homeruns "
-            " hrleaders hrleaders-info ";
+            " . homeruns-info homeruns . "
+            " . hrleaders hrleaders-info . ";
 }
 
 .crime-div {
