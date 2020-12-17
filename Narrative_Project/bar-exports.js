@@ -71,7 +71,7 @@ var yaxis1 = svg1
                 .style("font-size", ".9vw")
                 .attr("writing-mode", "vertical-lr")
                 .style("text-anchor", "middle")
-                .text("Fishmeal Exported (Per 1000 Metric Tons")
+                .text("Fishmeal Exported (Per 1000 Metric Tons)")
 
 
 
