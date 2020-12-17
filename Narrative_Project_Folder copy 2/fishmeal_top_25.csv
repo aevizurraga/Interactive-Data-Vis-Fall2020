@@ -1,0 +1,27 @@
+﻿Country,value,parent
+Origin,,
+Peru,1100,Origin
+EU,460,Origin
+Vietnam,460,Origin
+Chile,370,Origin
+China,350,Origin
+Thailand,340,Origin
+United States,255,Origin
+Norway,230,Origin
+Japan,180,Origin
+Morocco,171,Origin
+Russia,160,Origin
+Iceland,130,Origin
+South Africa,120,Origin
+Mexico,115,Origin
+Malaysia,80,Origin
+Ecuador,80,Origin
+Canada,65,Origin
+Faroe Islands,48,Origin
+South Korea,45,Origin
+New Zealand,35,Origin
+Indonesia,16,Origin
+Taiwan,15,Origin
+Senegal,13,Origin
+Phillipines,12,Origin
+Turkey,5,Origin

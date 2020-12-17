@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(143, 71, 49);
+    color: whitesmoke;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Oswald', sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    width: 8vw;
+    height: 100%;
+    background: rgba(45, 91, 107, 1);
+}
+
+.navbar ul {
+    display: block;
+    list-style: none;
+    height: 100%;
+    padding-top: 150%;
+    padding-bottom: 150%;
+
+}
+
+.navbar ul li {
+    text-align: left;    
+    padding: 1rem 1rem 1rem 1rem;
+}
+
+.navbar ul li:hover {
+    background: rgba(61, 59, 59, .3);
+    border-radius: 2vh;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: whitesmoke;
+}
+
+section {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    scroll-snap-align: center;
+    margin-top: 7vh;
+}
+
+section#Writing {
+    background: rgba(28, 82, 83, .8);
+}
+
+section#Threats {
+    background: rgb(148, 148, 148);
+}
+
+section#Fish {
+    background: rgb(117, 156, 201);
+}
+
+section#Title {
+    background: #ce7d1b;
+}
+
+.titlediv{
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 20% 60% 20%;
+    grid-template-areas: 
+        " . . . "
+        " . info ."
+        " . . . ";
+}
+
+.gen-info {
+    grid-area: info;
+    place-self: end;
+}
+
+.homeruns {
+    grid-area: homeruns;
+    place-self: center;
+}
+.homeruns-info {
+    grid-area: homeruns-info;
+    place-self: center;
+}
+.hrleaders {
+    grid-area: hrleaders;
+    place-self: center;
+}
+.hrleaders-info {
+    grid-area: hrleaders-info;
+    place-self: center;
+}
+
+.baseball-div {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas: 
+            " homeruns-info homeruns "
+            " hrleaders hrleaders-info ";
+}
+
+.crime-div {
+    grid-area: crime;
+    place-self: center;
+}
+.crime-div-info {
+    grid-area: crime-info;
+    place-self: center;
+}
+
+.crime-nyc {
+        display: grid;
+        grid-template-columns: 10% 80% 10%;
+        grid-template-rows: 10% 60% 30%;
+        grid-template-areas: 
+            " . . . "
+            " . crime .  "
+            " . crime-info . ";
+}
+
+.fishmeal-div {
+    grid-area: fish;
+    place-self: center;
+}
+.fishmeal-div-info {
+    grid-area: fish-info;
+    place-self: center;
+}
+
+.fishmeal {
+        display: grid;
+        grid-template-columns: 10% 50% 30% 10%;
+        grid-template-rows: 5% 80% 5%;
+        grid-template-areas: 
+            " . . . . "
+            " . fish fish-info .  "
+            " . . . . ";
+}
+
+h1 {
+    font-size: 1.2rem;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    color: black;
+}
+
+h2 {
+    font-size: 1.1rem;
+    font-family: 'Oswald', sans-serif;
+}

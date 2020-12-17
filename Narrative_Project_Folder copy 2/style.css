@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(43, 43, 43);
+    color: whitesmoke;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Oswald', sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+.navbar {
+    position: fixed;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    width: 100%;
+    height: 7vh;
+    background: rgba(43, 43, 43, 1);
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    align-items: center;
+}
+
+.navbar ul li {
+    margin: 0 2rem;
+    padding: .5rem;
+    text-align: left;
+}
+
+.navbar ul li:hover {
+    background: rgba(61, 59, 59, .3);
+    border-radius: 2vh;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: whitesmoke;
+}
+
+section {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    scroll-snap-align: center;
+    margin-top: 7vh;
+}
+
+h3 {
+    font-family: 'Nunito', sans-serif; 
+    line-height: 1.6;
+}
+
+h4 {
+    font-family: 'Nunito', sans-serif; 
+    line-height: 2;
+    font-size: 1rem;
+    color: rgb(43, 43, 43);
+}
+
+h5 {
+    font-family: 'Nunito', sans-serif; 
+    line-height: 1.5;
+    font-size: .9rem;
+    color: rgb(43, 43, 43);
+}
+
+section#Title {
+    background: url(peru-background.png) no-repeat center center/cover;
+}
+
+.title-font {
+    text-align: center; 
+    position:relative; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    font-family: 'Nunito', sans-serif; 
+    font-size: 1.1rem;
+}
+
+.writing-description {
+    grid-area: writing;
+    place-self: center;
+}
+
+.Writing-Div {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 10% 80% 10%;
+    grid-template-areas: 
+        " . . . "
+        " . writing . "
+        " . . . "
+        ;
+}
+
+.treemap-title {
+    grid-area: title;
+    place-self: center;
+}
+
+.treemap {
+    grid-area: treemap;
+    place-self: center;
+}
+
+.treemap-info {
+    grid-area: treemap-info;
+    place-self: center;
+}
+
+.main1 {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 10%  50% 30%;
+    grid-template-areas: 
+    " title title  title"
+    " treemap treemap treemap"
+    " . treemap-info ."
+    ;
+}
+
+.barchart1-title {
+    grid-area: barchart1-title;
+    place-self: center;
+}
+
+.barchart1 {
+    grid-area: barchart1;
+    place-self: center;
+}
+
+.barchart1-info {
+    grid-area: barchart1-info;
+    place-self: center;
+}
+
+.main2 {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 10%  90%;
+    grid-template-areas: 
+    " barchart1-title barchart1-info "
+    " barchart1 barchart1-info "
+    ;
+}
+
+.circlechart-title {
+    grid-area: circlechart-title;
+    place-self: center;
+}
+
+.circlechart {
+    grid-area: circle1;
+    place-self: center;
+}
+
+.circlechart-info {
+    grid-area: circlechart-info;
+    place-self: center;
+}
+
+.main3 {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 10% 50% 40%;
+    grid-template-areas: 
+    " circlechart-title circlechart-title circlechart-title"
+    " circle1 circle1 circle1"
+    " . circlechart-info . "
+    ;
+}
+
+.elnino {
+    grid-area: nino;
+    place-self: center;
+}
+
+.pollution {
+    grid-area: pollution;
+    place-self: center;
+}
+
+.image1 {
+    grid-area: img1;
+    place-self: center;
+}
+
+.image2 {
+    grid-area: img2;
+    place-self: center;
+}
+
+.threats2 {
+    display: grid;
+    grid-template-columns: 5% 45% 25% 20% 5%;
+    grid-template-rows: 5% 40% 50% 5%;
+    grid-template-areas: 
+        " . . . . . "
+        " . nino nino nino . "
+        " . pollution pollution img2 img2 "
+        " . . . . . ";
+}
+
+.toolTip {
+    position: absolute;
+    display: none;
+    width: auto;
+    height: auto;
+    background: rgb(43, 43, 43);
+    border-radius: .4rem;
+    color: whitesmoke;
+    font-size: 1rem;
+    font-family: 'Nunito', sans-serif;
+    padding: .5rem;
+    text-align: center;
+}
+
+.data-info {
+    grid-area: data;
+    place-self: left;
+    justify-items: center;
+}
+
+.references {
+    grid-area: references;
+    place-self: left;
+}
+
+.last-div {
+    display: grid;
+    grid-template-columns: 5% 45% 45% 5%;
+    grid-template-rows: 60% 40%;
+    grid-template-areas: 
+        " . . . . "
+        " . data references . ";
+    align-items: center;
+}
+
+section#data-ref {
+    background-image: linear-gradient(rgb(43, 43, 43) 60%, rgb(214, 211, 211) 40%);
+}
