@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: rgb(143, 71, 49);
+    background-color: #ce7d1b;
     color: whitesmoke;
     height: 100vh;
     overflow: hidden;
@@ -69,7 +69,7 @@ section#Baseball {
 }
 
 section#Crime {
-    background: rgb(148, 148, 148);
+    background: #ce7d1b;
 }
 
 .fishmeal {
